@@ -1,9 +1,9 @@
-# MAETS 🎮
+# MAETS
 
-**MAETS** (which is literally *Steam* spelled backwards 😎) is a personal project where users can register and manage their games in a custom library.  
+**MAETS** (which is literally *Steam* spelled backwards) is a personal project where users can register and manage their games in a custom library.  
 The goal is to create a personal version of Steam with detailed tracking for each game.
 
-## 🔧 Current features
+## Current features
 - Add games with:
   - Name  
   - Cover image  
@@ -13,16 +13,16 @@ The goal is to create a personal version of Steam with detailed tracking for eac
   - Developer  
   - External link  
 
-## 🚧 Upcoming features
+## Upcoming features
 - Track playtime  
 - Mark game completion and platinum status  
 - Register unlocked achievements  
 - Write personal reviews  
 
-## 📦 Current version
-**v0.1.3-alpha**
+## Current version
+**v0.1.3-alpha** (soon)
 
-## 💬 About the project
+## About the project
 The layout is built using **HTML**, **CSS**, and **JavaScript**.  
 This project is still in early development and will be updated gradually with new versions and features.
 
