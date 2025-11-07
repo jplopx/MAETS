@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar novo jogo</title>
+    <style>
+        body { background-color: whitesmoke; font-family: Arial, sans-serif; margin: 20px; }
+        header, footer { text-align: center; margin-bottom: 20px; }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input, button {
+            padding: 8px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Adicionar jogo à biblioteca</h1>
+        <nav>
+            <a href="home.html">Início</a>
+        </nav>
+    </header>
+
+    <main>
+        <form id="formJogo">
+            <input type="text" id="titulo" placeholder="Nome do jogo" required>
+            <input type="url" id="imagem" placeholder="Imagem (URL)">
+            <input type="date" id="data">
+            <input type="text" id="publisher" placeholder="Publisher">
+            <input type="text" id="dev" placeholder="Desenvolvedora">
+            <input type="url" id="link" placeholder="Link do jogo">
+            <button type="submit">Registrar Jogo</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por <strong>João</strong></p>
+    </footer>
+
+    <script>
+        document.getElementById('formJogo').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const jogo = Object.fromEntries(
+                ['titulo','imagem','data','publisher','dev','link']
+                .map(id => [id, document.getElementById(id).value.trim()])
+            );
+
+            if (!jogo.titulo) return alert("O nome do jogo é obrigatório!");
+
+            const jogos = JSON.parse(localStorage.getItem('jogos')) || [];
+            jogos.push(jogo);
+            localStorage.setItem('jogos', JSON.stringify(jogos));
+
+            alert("Jogo adicionado com sucesso!");
+            window.location.href = "home.html";
+        });
+    </script>
+</body>
+</html>

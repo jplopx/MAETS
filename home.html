@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Maets</title>
+<style>
+    body { background-color: whitesmoke; font-family: Arial, sans-serif; margin: 20px; text-align: center; }
+    header, footer { text-align: center; margin-bottom: 20px; }
+    nav a { margin: 0 10px; text-decoration: none; }
+    footer { margin-top: 50px; color: rgba(0,0,0,0.5); }
+    #lista { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; }
+    .jogo-card { border:1px solid #ccc; border-radius:10px; padding:15px; width:250px; text-align:center; }
+    .jogo-card img{ max-width:100%; border-radius:8px; }
+    #busca-container{ text-align:center; margin:20px 0; }
+    #campoBusca{ width:15%; padding:8px; font-size:16px; border-radius:8px; border:1px solid #ccc; }
+    button{ cursor:pointer; margin:5px 3px; }
+
+    /* modal (edicao) */
+    .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0,0,0,0.45);
+        backdrop-filter: blur(4px);
+        z-index: 1000;
+    }
+    .modal-backdrop.show { display:flex; }
+    .modal {
+        background:whitesmoke;
+        padding:18px;
+        border-radius:10px;
+        width: min(520px, 95%);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+    .modal h3{ margin-top:0; }
+    .modal .linha{ display:flex; gap:8px; margin-bottom:8px; }
+    .modal input[type="text"], .modal input[type="url"], .modal input[type="date"]{
+        flex:1; padding:8px; border:1px solid #ccc; border-radius:6px;
+    }
+    .modal .acoes{ text-align:right; margin-top:8px; }
+</style>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="home.html">Início</a>
+        <a href="registrojogos.html">Registrar Jogo</a>
+    </nav>
+</header>
+
+<main>
+    <img src="img/maetslogo.png" alt="Logo Maets" width="150" />
+    <br><br>
+    <button id="limpar">Limpar biblioteca</button>
+
+    <div id="busca-container">
+        <input type="text" id="campoBusca" placeholder="Buscar jogo...">
+    </div>
+
+    <div id="lista"></div>
+</main>
+
+<!-- modal de edicao -->
+<div id="modal-container" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <h3 id="modalTitle">Editar jogo</h3>
+
+        <div class="linha">
+            <input id="tituloEdit" type="text" placeholder="Nome do jogo" required>
+        </div>
+        <div class="linha">
+            <input id="imagemEdit" type="url" placeholder="Imagem (URL)">
+        </div>
+        <div class="linha">
+            <input id="dataEdit" type="date" placeholder="Data de lançamento">
+            <input id="publisherEdit" type="text" placeholder="Publisher">
+        </div>
+        <div class="linha">
+            <input id="devEdit" type="text" placeholder="Desenvolvedora">
+            <input id="linkEdit" type="url" placeholder="Link do jogo">
+        </div>
+
+        <div class="acoes">
+            <button id="cancelarEdit" type="button">Cancelar</button>
+            <button id="salvarEdit" type="button">Salvar</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Desenvolvido por <strong>João</strong></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
