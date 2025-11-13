@@ -20,7 +20,7 @@ The goal is to create a personal version of Steam with detailed tracking for eac
 - Write personal reviews  
 
 ## Current version
-**v0.1.2-alpha**
+**v0.1.1-alpha**
 
 ## About the project
 The layout is built using **HTML**, **CSS**, and **JavaScript**.  
